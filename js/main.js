@@ -38,15 +38,24 @@ function verificarIntento() {
         var modalFelicitaciones = new bootstrap.Modal(document.getElementById('modalFelicitaciones'));
         modalFelicitaciones.show();
         asignarImagen("imagen-robot", "/imgs/ilustraciones/8.png");
+
+        // Habilitacion del boton para reiniciar
+        document.getElementById("reiniciar").removeAttribute("disabled");
     } else if (numeroUsuario < numeroSecreto) {
+        // Muestra ayuda
         asignarTexto("p", "El número secreto es menor al número que estoy pensando.");
+        // Cambia la imagen 
         asignarImagen("imagen-robot", "/imgs/ilustraciones/4.png");
     } else {
+        // Muestra ayuda
         asignarTexto("p", "El número secreto es mayor al número que estoy pensando.");
+        // Cambia la imagen 
         asignarImagen("imagen-robot", "/imgs/ilustraciones/5.png");
     }
-
+    // Contador de intentos se incrementa en 1
     contadorIntentos++;
+
+    limpiarCaja();
 
     return;
 }
@@ -57,9 +66,19 @@ function generaNumero() {
     return Math.floor(Math.random() * 10) + 1;
 }
 
+//? Limpiar caja
+function limpiarCaja(){
+    // Selecciona el elemento con ese ID
+    let valorCaja = document.querySelector("#valorUsuario").value = "";
+    
+}
+
 //TODO LLamada a las funciones
-//? LLamando a la función reutilizable fuera de todo bloque de código
+//? Cambia el contenido del h1 del HTML
 asignarTexto("h1", "DESCUBRE EL <br> NÚMERO SECRETO");
+
+//? Cambia el contenido de la etiqueta p del HTML
 asignarTexto("p", "Bienvenido al juego del Número Secreto. ¿Tienes la habilidad para descubrir el número oculto? <br> Ingresa tu mejor suposición y descubre si eres el maestro de los números.");
 
+//? Cambia la imagen del HTML
 asignarImagen("imagen-robot", "/imgs/ilustraciones/1.png");
