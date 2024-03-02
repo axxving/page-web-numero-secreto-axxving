@@ -11,9 +11,10 @@ function asignarTexto(elemento, texto) {
     return;
 }
 
-//? Funcion de intentos del usuario
-function intentoUsuario() {
-    alert("Clic desde el boton");
+//? Función de intentos del usuario
+function verificarIntento() {
+    // Numero de tipo entero
+    let numeroUsuario = parseInt(document.getElementById("valorUsuario").value);
     return;
 }
 
@@ -27,4 +28,3 @@ function generaNumero(){
 //? LLamando a la función reutilizable fuera de todo bloque de código
 asignarTexto("h1", "DESCUBRE EL <br> NÚMERO SECRETO");
 asignarTexto("p", "Bienvenido al juego del Número Secreto. ¿Tienes la habilidad para descubrir el número oculto? <br> Ingresa tu mejor suposición y descubre si eres el maestro de los números.");
-
