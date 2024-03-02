@@ -1,13 +1,26 @@
+//TODO Varibales
+let numeroSecreto = generaNumero();
+
+console.log(numeroSecreto);
+
 //TODO Funciones 
 //? Asignar valores a los elementos html desde el código JavaScript
 function asignarTexto(elemento, texto) {
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML = texto;
+    return;
 }
 
 //? Funcion de intentos del usuario
 function intentoUsuario() {
     alert("Clic desde el boton");
+    return;
+}
+
+//? Generando un número aleatorio
+function generaNumero(){
+    // Genera un numero aleatorio y lo retorna
+    return Math.floor(Math.random()*10)+1;
 }
 
 //TODO LLamada a las funciones
