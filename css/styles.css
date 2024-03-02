@@ -17,8 +17,24 @@ h2 {
     color: var(--blanco);
 }
 
+p{
+    font-weight: bolder;
+}
+
 h1 {
     text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+}
+
+/*TODO Modales*/
+.modal-content {
+    background-color: var(--fondo-transparente);
+    border: 2px solid var(--azul);
+}
+
+/* Estilos para el botón de cierre blanco */
+.btn-close-white {
+    color: #ffffff;
+    /* Cambia el color al blanco */
 }
 
 /*TODO Hero*/
@@ -135,9 +151,7 @@ h1 {
 }
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-
-}
+@media (min-width: 768px) {}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {}

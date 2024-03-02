@@ -61,7 +61,8 @@
                                 mejor suposición y descubre si eres el maestro de los números.</p>
 
                             <!-- Input -->
-                            <input id="valorUsuario" class="form-control mb-3" type="text" placeholder="Ingresa tu suposición" />
+                            <input id="valorUsuario" class="form-control mb-3" type="text"
+                                placeholder="Ingresa tu suposición" />
 
                             <!-- Botones con iconos -->
                             <div class="d-flex align-items-center">
@@ -85,6 +86,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal de felicitaciones -->
+    <div class="modal fade" id="modalFelicitaciones" tabindex="-1" aria-labelledby="modalFelicitacionesLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white" id="modalFelicitacionesLabel">¡Felicidades!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Has adivinado el número secreto. ¡Eres un maestro de los números!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <!-- Scroll Reveal -->

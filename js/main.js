@@ -15,13 +15,25 @@ function asignarTexto(elemento, texto) {
 function verificarIntento() {
     // Numero de tipo entero
     let numeroUsuario = parseInt(document.getElementById("valorUsuario").value);
+
+    // Condicion de intento
+    if (numeroUsuario === numeroSecreto) {
+        // Muestra el modal de felicitaciones
+        var modalFelicitaciones = new bootstrap.Modal(document.getElementById('modalFelicitaciones'));
+        modalFelicitaciones.show();
+    } else if (numeroUsuario > numeroSecreto){
+        asignarTexto("p", "El número secreto es menor al número que estoy pensando.");
+    } else {
+        asignarTexto("p", "El número secreto es mayor al número que estoy pensando.");
+    }
+
     return;
 }
 
 //? Generando un número aleatorio
-function generaNumero(){
+function generaNumero() {
     // Genera un numero aleatorio y lo retorna
-    return Math.floor(Math.random()*10)+1;
+    return Math.floor(Math.random() * 10) + 1;
 }
 
 //TODO LLamada a las funciones
