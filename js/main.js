@@ -1,9 +1,9 @@
 //TODO Varibales
 //? Número secreto
-let numeroSecreto = generaNumero();
+let numeroSecreto = 0;
 
 //? Contador de intentos
-let contadorIntentos = 1;
+let contadorIntentos = 0;
 
 console.log(numeroSecreto);
 
@@ -41,7 +41,7 @@ function verificarIntento() {
 
         // Habilitacion del boton para reiniciar
         document.getElementById("reiniciar").removeAttribute("disabled");
-    } else if (numeroUsuario < numeroSecreto) {
+    } else if (numeroUsuario > numeroSecreto) {
         // Muestra ayuda
         asignarTexto("p", "El número secreto es menor al número que estoy pensando.");
         // Cambia la imagen 
@@ -62,23 +62,49 @@ function verificarIntento() {
 
 //? Generando un número aleatorio
 function generaNumero() {
-    // Genera un numero aleatorio y lo retorna
-    return Math.floor(Math.random() * 10) + 1;
+    let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
+    console.log(numeroAleatorio); // Agrega esta línea para imprimir el número generado
+    return numeroAleatorio;
 }
 
 //? Limpiar caja
-function limpiarCaja(){
+function limpiarCaja() {
     // Selecciona el elemento con ese ID
     let valorCaja = document.querySelector("#valorUsuario").value = "";
-    
+}
+
+//? Reiniciar juego
+function reiniciarJuego() {
+    // Limpiar la caja
+    limpiarCaja();
+
+    // Generar nuevo numero aleatorio
+    // Inicializar el numero de intentos
+    // Indicar mensaje de intervalo de numeros
+    estadosIniciales();
+
+    // Deshabilitar el boton de nuevo juego
+    document.querySelector("#reiniciar").setAttribute("disabled", "true");
+
+}
+
+//? Estados iniciales
+function estadosIniciales() {
+    //? Cambia el contenido del h1 del HTML
+    asignarTexto("h1", "DESCUBRE EL <br> NÚMERO SECRETO");
+
+    //? Cambia el contenido de la etiqueta p del HTML
+    asignarTexto("p", "Bienvenido al juego del Número Secreto. ¿Tienes la habilidad para descubrir el número oculto? <br> Ingresa tu mejor suposición y descubre si eres el maestro de los números.");
+
+    //? Cambia la imagen del HTML
+    asignarImagen("imagen-robot", "/imgs/ilustraciones/1.png");
+
+    //? Generar nuevo numero aleatorio
+    numeroSecreto = generaNumero();
+
+    //? Inicializar el numero de intentos
+    contadorIntentos = 1;
 }
 
 //TODO LLamada a las funciones
-//? Cambia el contenido del h1 del HTML
-asignarTexto("h1", "DESCUBRE EL <br> NÚMERO SECRETO");
-
-//? Cambia el contenido de la etiqueta p del HTML
-asignarTexto("p", "Bienvenido al juego del Número Secreto. ¿Tienes la habilidad para descubrir el número oculto? <br> Ingresa tu mejor suposición y descubre si eres el maestro de los números.");
-
-//? Cambia la imagen del HTML
-asignarImagen("imagen-robot", "/imgs/ilustraciones/1.png");
+estadosIniciales();
