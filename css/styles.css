@@ -15,10 +15,12 @@ p,
 h1,
 h2 {
     color: var(--blanco);
+    font-weight: bolder;
 }
 
-p{
+h6{
     font-weight: bolder;
+    color: var(--blanco);
 }
 
 h1 {
