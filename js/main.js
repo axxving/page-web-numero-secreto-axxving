@@ -5,6 +5,12 @@ let numeroSecreto = 0;
 //? Contador de intentos
 let contadorIntentos = 0;
 
+//? Lista de números
+let listaNumeros = [];
+
+//? Número maximo
+let numeroMaximo = 10;
+
 console.log(numeroSecreto);
 
 //TODO Funciones 
@@ -62,8 +68,26 @@ function verificarIntento() {
 
 //? Generando un número aleatorio
 function generaNumero() {
-    let numeroAleatorio = Math.floor(Math.random() * 10) + 1;
-    console.log(numeroAleatorio); // Agrega esta línea para imprimir el número generado
+    let numeroAleatorio = Math.floor(Math.random() * numeroMaximo) + 1;
+
+    console.log(numeroAleatorio);
+    console.log(listaNumeros);
+
+    // Si ya sorteamos todos los numeros
+    if (listaNumeros.length === numeroMaximo) {
+        asignarTexto("p", "Ya se sortearon todos los números posibles.");
+    } else {
+        // Si el número genera esta incluido en la lista 
+        if (listaNumeros.includes(numeroAleatorio)) {
+            return generaNumero();
+        } else {
+            listaNumeros.push(numeroAleatorio);
+            return numeroAleatorio;
+        }
+    }
+
+
+
     return numeroAleatorio;
 }
 
@@ -94,7 +118,7 @@ function estadosIniciales() {
     asignarTexto("h1", "DESCUBRE EL <br> NÚMERO SECRETO");
 
     //? Cambia el contenido de la etiqueta p del HTML
-    asignarTexto("p", "Bienvenido al juego del Número Secreto. ¿Tienes la habilidad para descubrir el número oculto? <br> Ingresa tu mejor suposición y descubre si eres el maestro de los números.");
+    asignarTexto("p", `Inidica un número del 1 al ${numeroMaximo}.`);
 
     //? Cambia la imagen del HTML
     asignarImagen("imagen-robot", "/imgs/ilustraciones/1.png");
@@ -105,6 +129,8 @@ function estadosIniciales() {
     //? Inicializar el numero de intentos
     contadorIntentos = 1;
 }
+
+
 
 //TODO LLamada a las funciones
 estadosIniciales();
