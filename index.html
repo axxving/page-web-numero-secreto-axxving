@@ -91,13 +91,14 @@
     <div class="modal fade" id="modalFelicitaciones" tabindex="-1" aria-labelledby="modalFelicitacionesLabel"
         aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content modalFelicitaciones">
                 <div class="modal-header">
                     <h5 class="modal-title text-white" id="modalFelicitacionesLabel">¡Felicidades!</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <img class="img-fluid" src="/imgs/ilustraciones/6.png" alt="Ilustracion de ganador">
                     <h6></h6>
                 </div>
                 <div class="modal-footer">
@@ -107,6 +108,46 @@
         </div>
     </div>
 
+    <!-- Modal Game Over -->
+    <div class="modal fade" id="modalGameOver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modalGameOver">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">¡Game Over!</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Contenido específico para Game Over -->
+                    <img class="img-fluid" id="imagen-robot" src="/imgs/ilustraciones/4.png" alt="Robot Triste">
+                    <p id="modalTexto">Lo siento, has agotado tus intentos. Mejor suerte la próxima vez.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Advertencia -->
+    <div class="modal fade" id="modalAdvertencia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modalAdvertencia">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">Advertencia</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="img-fluid" id="imagen-robot" src="/imgs/ilustraciones/9.png" alt="Robot Triste">
+                    <p>Por favor, ingresa un número válido entre 1 y 10.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Scroll Reveal -->

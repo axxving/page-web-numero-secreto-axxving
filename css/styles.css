@@ -3,8 +3,14 @@
 :root {
     --blanco: #ffffff;
     --azul: #2c87ff;
+    --verde: #2cff5a;
+    --amarillo: #ffe600;
+    --rojo: #ff0000;
 
     --fondo-transparente: #025faa70;
+    --fondo-felicitaciones: #2cff5a6c;
+    --fondo-advertencia: #f1ff2c6c;
+    --fondo-gameOver: #ff2c2c6c;
 }
 
 * {
@@ -37,6 +43,22 @@ h1 {
 .btn-close-white {
     color: #ffffff;
     /* Cambia el color al blanco */
+}
+
+/*TODO Felicitaciones*/
+.modalFelicitaciones{
+    background-color: var(--fondo-felicitaciones);
+    border: 2px solid var(--verde);
+}
+
+.modalAdvertencia{
+    background-color: var(--fondo-advertencia);
+    border: 2px solid var(--amarillo);
+}
+
+.modalGameOver{
+    background-color: var(--fondo-gameOver);
+    border: 2px solid var(--rojo);
 }
 
 /*TODO Hero*/
