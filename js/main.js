@@ -31,10 +31,10 @@ function verificarIntento() {
 
         juegoTerminado = true;  // Juego ha terminado
     } else if (numeroUsuario > numeroSecreto) {
-        asignarTexto("p", "El número secreto es menor al número que estoy pensando.");
+        asignarTexto("p", "El número es menor.");
         asignarImagen("imagen-robot", "/imgs/ilustraciones/4.png");
     } else {
-        asignarTexto("p", "El número secreto es mayor al número que estoy pensando.");
+        asignarTexto("p", "El número es mayor.");
         asignarImagen("imagen-robot", "/imgs/ilustraciones/5.png");
     }
 
