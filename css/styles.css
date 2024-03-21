@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+:root {
+    --blanco: #ffffff;
+    --azul: #2c87ff;
+    --verde: #2cff5a;
+    --amarillo: #ffe600;
+    --rojo: #ff0000;
+
+    --fondo-transparente: #025faa70;
+    --fondo-felicitaciones: #2cff5a6c;
+    --fondo-advertencia: #f1ff2c6c;
+    --fondo-gameOver: #ff2c2c6c;
+}
+
+* {
+    font-family: "Orbitron", sans-serif;
+}
+
+p,
+h1,
+h2 {
+    color: var(--blanco);
+    font-weight: bolder;
+}
+
+h6{
+    font-weight: bolder;
+    color: var(--blanco);
+}
+
+h1 {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+}
+
+/*TODO Modales*/
+.modal-content {
+    background-color: var(--fondo-transparente);
+    border: 2px solid var(--azul);
+}
+
+/* Estilos para el botón de cierre blanco */
+.btn-close-white {
+    color: #ffffff;
+    /* Cambia el color al blanco */
+}
+
+/*TODO Felicitaciones*/
+.modalFelicitaciones{
+    background-color: var(--fondo-felicitaciones);
+    border: 2px solid var(--verde);
+}
+
+.modalAdvertencia{
+    background-color: var(--fondo-advertencia);
+    border: 2px solid var(--amarillo);
+}
+
+.modalGameOver{
+    background-color: var(--fondo-gameOver);
+    border: 2px solid var(--rojo);
+}
+
+/*TODO Hero*/
+#hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* Estilos para el video */
+        #video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .container-hero {
+
+            .row-hero {
+                .container-texto-hero {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: var(--fondo-transparente);
+                    backdrop-filter: blur(5px);
+                    border: 2px solid var(--azul);
+                    padding: 20px;
+                    border-radius: 5px;
+                    z-index: 10;
+
+                    .nombre {
+                        color: var(--blanco);
+                        font-size: 3rem;
+                        font-weight: bolder;
+                        color: var(--blanco);
+
+                        .apellido {
+                            color: var(--azul-medio);
+                        }
+                    }
+
+                }
+
+                .container-planeta {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .planeta {
+                        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+                        width: 80%;
+                        animation: floatAnimation 3s infinite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.video-container::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    /* Altura del difuminado, ajusta según sea necesario */
+    background: linear-gradient(to top, rgb(1, 1, 1), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    z-index: 10;
+}
+
+.form-control:focus {
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 0 0.25rem rgba(192, 204, 255, 0.466);
+    /* Cambia la sombra al hacer clic */
+}
+
+.bi {
+    margin-right: 5px;
+}
+
+/*TODO Media Querys*/
+
+/* Extra small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .nombre {
+        font-size: 2rem !important;
+    }
+
+    .planeta {
+        margin-top: 50px;
+    }
+}
+
+/* Small devices (phones, 576px and up) */
+@media (min-width: 576px) {
+    .nombre {
+        font-size: 3rem !important;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/*TODO: Animaciones*/
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
